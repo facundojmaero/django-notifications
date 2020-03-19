@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.6.1
+-----
+
+- Fix Notification import in views, now it uses swapper
+
 1.6.0
 -----
 
