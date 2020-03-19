@@ -9,10 +9,13 @@ from django.shortcuts import get_object_or_404, redirect
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView
 from notifications import settings
-from notifications.models import Notification
 from notifications.utils import id2slug, slug2id
 from notifications.settings import get_config
 from django.views.decorators.cache import never_cache
+
+from swapper import load_model
+
+Notification = load_model('notifications', 'Notification')
 
 if StrictVersion(get_version()) >= StrictVersion('1.7.0'):
     from django.http import JsonResponse  # noqa
